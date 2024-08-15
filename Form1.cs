@@ -1,3 +1,5 @@
+using win_helper.Services;
+
 namespace win_helper
 {
     public partial class Form1 : Form
@@ -5,6 +7,8 @@ namespace win_helper
         public Form1()
         {
             InitializeComponent();
+
+            new StayAwakeService().Active();
         }
     }
 }
