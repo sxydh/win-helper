@@ -39,7 +39,7 @@ namespace win_helper
             {
                 Width = 100,
                 Height = 50,
-                Text = "启用睡眠",
+                Text = "禁用睡眠",
                 BackColor = Color.Gray,
             };
             stayAwakeButton.Click += new EventHandler((sender, e) =>
