@@ -47,9 +47,9 @@ namespace win_helper
                 if (stayAwakeButton.BackColor == Color.Gray)
                 {
                     StayAwakeService.Active();
-                    stayAwakeButton.BackColor = Color.Green;
+                    stayAwakeButton.BackColor = Color.GreenYellow;
                 }
-                else if (stayAwakeButton.BackColor == Color.Green)
+                else if (stayAwakeButton.BackColor == Color.GreenYellow)
                 {
                     StayAwakeService.Inactive();
                     stayAwakeButton.BackColor = Color.Gray;
