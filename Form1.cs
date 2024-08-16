@@ -7,8 +7,6 @@ namespace win_helper
         public Form1()
         {
             InitializeComponent();
-
-            new StayAwakeService().Active();
         }
     }
 }
