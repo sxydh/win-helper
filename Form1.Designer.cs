@@ -40,11 +40,11 @@ namespace win_helper
                 Width = 100,
                 Height = 50,
                 Text = "禁用睡眠",
-                BackColor = Color.Gray,
+                BackColor = Color.White,
             };
             stayAwakeButton.Click += new EventHandler((sender, e) =>
             {
-                if (stayAwakeButton.BackColor == Color.Gray)
+                if (stayAwakeButton.BackColor == Color.White)
                 {
                     StayAwakeService.Active();
                     stayAwakeButton.BackColor = Color.GreenYellow;
@@ -52,7 +52,7 @@ namespace win_helper
                 else if (stayAwakeButton.BackColor == Color.GreenYellow)
                 {
                     StayAwakeService.Inactive();
-                    stayAwakeButton.BackColor = Color.Gray;
+                    stayAwakeButton.BackColor = Color.White;
                 }
             });
             return stayAwakeButton;
