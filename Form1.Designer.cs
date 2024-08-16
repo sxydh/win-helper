@@ -35,25 +35,24 @@ namespace win_helper
 
         private Button BuildStayAwakeButton()
         {
-            string active = "不要睡眠";
-            string inactive = "正常睡眠";
             Button stayAwakeButton = new Button
             {
                 Width = 100,
                 Height = 50,
-                Text = active,
+                Text = "睡眠",
+                BackColor = Color.Gray,
             };
             stayAwakeButton.Click += new EventHandler((sender, e) =>
             {
-                if (stayAwakeButton.Text == active)
-                {
-                    StayAwakeService.Inactive();
-                    stayAwakeButton.Text = inactive;
-                }
-                else if (stayAwakeButton.Text == inactive)
+                if (stayAwakeButton.BackColor == Color.Gray)
                 {
                     StayAwakeService.Active();
-                    stayAwakeButton.Text = active;
+                    stayAwakeButton.BackColor = Color.Green;
+                }
+                else if (stayAwakeButton.BackColor == Color.Green)
+                {
+                    StayAwakeService.Inactive();
+                    stayAwakeButton.BackColor = Color.Gray;
                 }
             });
             return stayAwakeButton;
