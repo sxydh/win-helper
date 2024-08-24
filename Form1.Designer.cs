@@ -24,6 +24,7 @@ namespace win_helper
             panel.Dock = DockStyle.Fill;
 
             panel.Controls.Add(BuildStayAwakeButton());
+            panel.Controls.Add(BuildTopButton());
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -35,27 +36,51 @@ namespace win_helper
 
         private Button BuildStayAwakeButton()
         {
-            MyButton stayAwakeButton = new MyButton(new StayAwakeService())
+            MyButton button = new MyButton(new StayAwakeService())
             {
                 Width = 100,
                 Height = 50,
                 Text = "禁用睡眠",
                 BackColor = Color.White,
             };
-            stayAwakeButton.Click += new EventHandler((sender, e) =>
+            button.Click += new EventHandler((sender, e) =>
             {
-                if (stayAwakeButton.BackColor == Color.White)
+                if (button.BackColor == Color.White)
                 {
-                    stayAwakeButton.Service.Active();
-                    stayAwakeButton.BackColor = Color.GreenYellow;
+                    button.Service.Active();
+                    button.BackColor = Color.GreenYellow;
                 }
-                else if (stayAwakeButton.BackColor == Color.GreenYellow)
+                else if (button.BackColor == Color.GreenYellow)
                 {
-                    stayAwakeButton.Service.Inactive();
-                    stayAwakeButton.BackColor = Color.White;
+                    button.Service.Inactive();
+                    button.BackColor = Color.White;
                 }
             });
-            return stayAwakeButton;
+            return button;
+        }
+
+        private Button BuildTopButton() {
+            MyButton button = new MyButton(new TopService())
+            {
+                Width = 100,
+                Height = 50,
+                Text = "启用置顶",
+                BackColor = Color.White,
+            };
+            button.Click += new EventHandler((sender, e) =>
+            {
+                if (button.BackColor == Color.White)
+                {
+                    button.Service.Active();
+                    button.BackColor = Color.GreenYellow;
+                }
+                else if (button.BackColor == Color.GreenYellow)
+                {
+                    button.Service.Inactive();
+                    button.BackColor = Color.White;
+                }
+            });
+            return button;
         }
 
     }
