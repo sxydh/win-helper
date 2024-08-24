@@ -2,7 +2,7 @@
 
 namespace win_helper.Services
 {
-    internal class StayAwakeService : BaseService
+    public class StayAwakeService : BaseService
     {
 
         public const uint ES_CONTINUOUS = 0x80000000;
