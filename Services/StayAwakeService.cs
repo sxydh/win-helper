@@ -1,22 +1,21 @@
-﻿using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace win_helper.Services
 {
-    internal class StayAwakeService
+    internal class StayAwakeService : BaseService
     {
 
         public const uint ES_CONTINUOUS = 0x80000000;
         public const uint ES_DISPLAY_REQUIRED = 0x00000002;
         public const uint ES_SYSTEM_REQUIRED = 0x00000001;
 
-        private static readonly object _lock = new();
-        private static int _ifActive = 0;
+        private readonly object _lock = new();
+        private int _ifActive = 0;
 
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern uint SetThreadExecutionState([In] uint esFlags);
 
-        public static void Active()
+        public override void Active()
         {
             lock (_lock)
             {
@@ -29,7 +28,7 @@ namespace win_helper.Services
             }
         }
 
-        public static void Inactive()
+        public override void Inactive()
         {
             lock (_lock)
             {
