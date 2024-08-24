@@ -1,5 +1,5 @@
-﻿using System.Windows.Forms;
-using win_helper.Services;
+﻿using win_helper.Services;
+using win_helper.Views;
 
 namespace win_helper
 {
@@ -35,7 +35,7 @@ namespace win_helper
 
         private Button BuildStayAwakeButton()
         {
-            Button stayAwakeButton = new Button
+            MyButton stayAwakeButton = new MyButton(new StayAwakeService())
             {
                 Width = 100,
                 Height = 50,
@@ -46,12 +46,12 @@ namespace win_helper
             {
                 if (stayAwakeButton.BackColor == Color.White)
                 {
-                    StayAwakeService.Active();
+                    stayAwakeButton.Service.Active();
                     stayAwakeButton.BackColor = Color.GreenYellow;
                 }
                 else if (stayAwakeButton.BackColor == Color.GreenYellow)
                 {
-                    StayAwakeService.Inactive();
+                    stayAwakeButton.Service.Inactive();
                     stayAwakeButton.BackColor = Color.White;
                 }
             });
