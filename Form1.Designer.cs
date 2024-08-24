@@ -64,7 +64,7 @@ namespace win_helper
             {
                 Width = 100,
                 Height = 50,
-                Text = "启用置顶",
+                Text = "置顶助手",
                 BackColor = Color.White,
             };
             button.Click += new EventHandler((sender, e) =>
