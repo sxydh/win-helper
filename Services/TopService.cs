@@ -40,7 +40,10 @@ namespace win_helper.Services
             {
                 return;
             }
-            UnhookWindowsHookEx(_hookId);
+            if (UnhookWindowsHookEx(_hookId))
+            {
+                _hookId = IntPtr.Zero;
+            }
         }
 
         private delegate IntPtr FnDelegate(int nCode, IntPtr wParam, IntPtr lParam);
