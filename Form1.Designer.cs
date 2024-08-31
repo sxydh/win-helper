@@ -30,7 +30,7 @@ namespace win_helper
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Win工具";
+            this.Text = "Win Utility";
             this.Controls.Add(panel);
             this.ResumeLayout(false);
         }
@@ -39,7 +39,7 @@ namespace win_helper
         {
             MyButton button = new MyButton(new StayAwakeService())
             {
-                Width = 100,
+                Width = 180,
                 Height = 50,
                 Text = "Awake Mode",
                 BackColor = Color.White,
@@ -64,7 +64,7 @@ namespace win_helper
         {
             MyButton button = new MyButton(new TopService())
             {
-                Width = 100,
+                Width = 180,
                 Height = 50,
                 Text = "Top Window",
                 BackColor = Color.White,
@@ -89,7 +89,7 @@ namespace win_helper
         {
             MyButton button = new MyButton(new CaptureService())
             {
-                Width = 100,
+                Width = 150,
                 Height = 50,
                 Text = "Screenshot",
                 BackColor = Color.White,
