@@ -12,13 +12,25 @@ Windows Utility Application
 
 Keeps the laptop from entering sleep mode while the application is running.
 
+```text
+Just Click The Button
+```
+
 ### 2. Topmost Window
 
 Ensures that the application window stays on top of all other windows.
 
+```text
+Ctrl + Shift + Alt + T
+```
+
 ### 3. Region Screenshot
 
 Allows users to capture screenshots of specific areas of the screen.
+
+```text
+Click The Button + Select Region
+```
 
 ## Suggestions and Future Development
 
