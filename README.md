@@ -8,20 +8,20 @@ Windows Utility Application
 
 ## Features
 
-### # Prevent Sleep Mode
+### Prevent Sleep Mode
 
 Keeps the laptop from entering sleep mode while the application is running.
 
 * Click The Button To Active
 
-### # Topmost Window
+### Topmost Window
 
 Ensures that the application window stays on top of all other windows.
 
 * Click The Button To Active
 * Ctrl + Shift + Alt + T
 
-### # Region Screenshot
+### Region Screenshot
 
 Allows users to capture screenshots of specific areas of the screen.
 
