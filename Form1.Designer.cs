@@ -25,6 +25,7 @@ namespace win_helper
 
             panel.Controls.Add(BuildStayAwakeButton());
             panel.Controls.Add(BuildTopButton());
+            panel.Controls.Add(BuildCaptureButton());
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -59,12 +60,38 @@ namespace win_helper
             return button;
         }
 
-        private Button BuildTopButton() {
+        private Button BuildTopButton()
+        {
             MyButton button = new MyButton(new TopService())
             {
                 Width = 100,
                 Height = 50,
                 Text = "置顶助手",
+                BackColor = Color.White,
+            };
+            button.Click += new EventHandler((sender, e) =>
+            {
+                if (button.BackColor == Color.White)
+                {
+                    button.Service.Active();
+                    button.BackColor = Color.GreenYellow;
+                }
+                else if (button.BackColor == Color.GreenYellow)
+                {
+                    button.Service.Inactive();
+                    button.BackColor = Color.White;
+                }
+            });
+            return button;
+        }
+
+        private Button BuildCaptureButton()
+        {
+            MyButton button = new MyButton(new CaptureService())
+            {
+                Width = 100,
+                Height = 50,
+                Text = "快速截图",
                 BackColor = Color.White,
             };
             button.Click += new EventHandler((sender, e) =>
