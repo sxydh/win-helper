@@ -8,15 +8,15 @@ Windows Utility Application
 
 ## Features
 
-### Prevent Sleep Mode
+### 1. Prevent Sleep Mode
 
 Keeps the laptop from entering sleep mode while the application is running.
 
-### Topmost Window
+### 2. Topmost Window
 
 Ensures that the application window stays on top of all other windows.
 
-### Region Screenshot
+### 3. Region Screenshot
 
 Allows users to capture screenshots of specific areas of the screen.
 
