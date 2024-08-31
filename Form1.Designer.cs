@@ -96,16 +96,8 @@ namespace win_helper
             };
             button.Click += new EventHandler((sender, e) =>
             {
-                if (button.BackColor == Color.White)
-                {
-                    button.Service.Active();
-                    button.BackColor = Color.GreenYellow;
-                }
-                else if (button.BackColor == Color.GreenYellow)
-                {
-                    button.Service.Inactive();
-                    button.BackColor = Color.White;
-                }
+                this.WindowState = FormWindowState.Minimized;
+                button.Service.Active();
             });
             return button;
         }
