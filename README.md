@@ -12,28 +12,22 @@ Windows Utility Application
 
 Keeps the laptop from entering sleep mode while the application is running.
 
-```text
-Click The Button To Active
-```
+* Click The Button To Active
 
 ### # Topmost Window
 
 Ensures that the application window stays on top of all other windows.
 
-```text
-1. Click The Button To Active
-2. Ctrl + Shift + Alt + T
-```
+* Click The Button To Active
+* Ctrl + Shift + Alt + T
 
 ### # Region Screenshot
 
 Allows users to capture screenshots of specific areas of the screen.
 
-```text
-1. Click The Button To Active
-2. Select Region
-3. Save To Desktop
-```
+* Click The Button To Active
+* Select Region
+* Save To Desktop
 
 ## Suggestions and Future Development
 
