@@ -41,7 +41,7 @@ namespace win_helper
             {
                 Width = 100,
                 Height = 50,
-                Text = "禁用睡眠",
+                Text = "Awake Mode",
                 BackColor = Color.White,
             };
             button.Click += new EventHandler((sender, e) =>
@@ -66,7 +66,7 @@ namespace win_helper
             {
                 Width = 100,
                 Height = 50,
-                Text = "置顶助手",
+                Text = "Top Window",
                 BackColor = Color.White,
             };
             button.Click += new EventHandler((sender, e) =>
@@ -91,7 +91,7 @@ namespace win_helper
             {
                 Width = 100,
                 Height = 50,
-                Text = "快速截图",
+                Text = "Screenshot",
                 BackColor = Color.White,
             };
             button.Click += new EventHandler((sender, e) =>
