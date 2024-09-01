@@ -135,6 +135,7 @@ namespace win_helper
             {
                 if (e.KeyCode == Keys.Enter)
                 {
+                    e.SuppressKeyPress = true;
                     CompressService compressService = (CompressService)button.Service;
                     if (qualityBox.Text.Length > 0)
                     {
