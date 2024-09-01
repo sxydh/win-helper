@@ -129,7 +129,8 @@ namespace win_helper
             {
                 Width = 50,
                 Height = 50,
-                AutoSize = false
+                AutoSize = false,
+                Text = "75"
             };
             qualityBox.KeyDown += new KeyEventHandler((sender, e) =>
             {

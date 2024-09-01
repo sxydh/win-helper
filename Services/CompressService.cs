@@ -18,19 +18,21 @@ namespace win_helper.Services
             {
                 Filter = "图片文件 (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                Title = "请选择一个文件"
+                Multiselect = true,
+                Title = "请选择文件"
             };
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string inputPath = openFileDialog.FileName;
-                string? dir = Path.GetDirectoryName(inputPath);
-                if (dir != null)
-                {
-                    string fileName = $"{Path.GetFileNameWithoutExtension(inputPath)}_{DateTime.Now:HHmmss}.jpg";
-                    string outputPath = Path.Combine(dir, fileName);
-                    CompressHelper.CompressImage(inputPath, outputPath, this.Quality);
+                string[] inputPaths = openFileDialog.FileNames;
+                foreach (string inputPath in inputPaths) {
+                    string? dir = Path.GetDirectoryName(inputPath);
+                    if (dir != null)
+                    {
+                        string fileName = $"{Path.GetFileNameWithoutExtension(inputPath)}_{DateTime.Now:HHmmss}.jpg";
+                        string outputPath = Path.Combine(dir, fileName);
+                        CompressHelper.CompressImage(inputPath, outputPath, this.Quality);
+                    }
                 }
-
             }
         }
 
