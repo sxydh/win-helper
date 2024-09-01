@@ -26,6 +26,7 @@ namespace win_helper
             panel.Controls.Add(BuildStayAwakeButton());
             panel.Controls.Add(BuildTopButton());
             panel.Controls.Add(BuildCaptureButton());
+            panel.Controls.Add(BuildCompressPanel());
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,6 +101,49 @@ namespace win_helper
                 button.Service.Active();
             });
             return button;
+        }
+
+        private Panel BuildCompressPanel()
+        {
+            FlowLayoutPanel panel = new FlowLayoutPanel()
+            {
+                Padding = System.Windows.Forms.Padding.Empty,
+                Margin = System.Windows.Forms.Padding.Empty,
+                Width = 270,
+                BorderStyle = BorderStyle.None
+            };
+
+            MyButton button = new MyButton(new CompressService())
+            {
+                Width = 200,
+                Height = 50,
+                Text = "Compress Image",
+            };
+            button.Click += new EventHandler((sender, e) =>
+            {
+                button.Service.Active();
+            });
+            panel.Controls.Add(button);
+
+            TextBox qualityBox = new TextBox()
+            {
+                Width = 50,
+                Height = 50,
+                AutoSize = false
+            };
+            qualityBox.KeyDown += new KeyEventHandler((sender, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    CompressService compressService = (CompressService)button.Service;
+                    if (qualityBox.Text.Length > 0)
+                    {
+                        compressService.Quality = int.Parse(qualityBox.Text);
+                    }
+                }
+            });
+            panel.Controls.Add(qualityBox);
+            return panel;
         }
 
     }
